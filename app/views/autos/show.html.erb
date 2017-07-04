@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @auto.name %>
+</p>
+
+<p>
+  <strong>Modelo:</strong>
+  <%= @auto.modelo %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= image_tag(@auto.photo, :style => 'width:200px')%>
+</p>
+
+<%= link_to 'Edit', edit_auto_path(@auto) %> |
+<%= link_to 'Back', autos_path %>

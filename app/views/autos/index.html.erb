@@ -1,0 +1,44 @@
+<p id="notice" xmlns:margin-bottom="http://www.w3.org/1999/xhtml" xmlns:margin-bottom="http://www.w3.org/1999/xhtml"
+   xmlns:margin-bottom="http://www.w3.org/1999/xhtml"><%= notice %></p>
+<div>
+  <marquee><h1>Classic Car</h1></marquee>
+</div>
+<div class="grid">
+
+
+  <% @autos.each do|auto|%>
+      <div class="grid-item" style="width: 25%">
+        <div class="thumbnail">
+          <%= auto.name %>
+          <%= auto.modelo %>
+          <%= image_tag(auto.photo, :class => 'img-responsive') %>
+          <div class="buttons", style="margin-top:10px; margin-bottom:10px ">
+            <%=link_to 'Show', auto, :class => 'btn' %>
+            <%=link_to 'Edit',  edit_auto_path(auto), :class => 'btn'%>
+            <%=link_to 'Destroy',  auto, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn'%>
+          </div>
+      </div>
+        <%=link_to 'New Auto', new_auto_path %>
+</div>
+
+  <% end %>
+<br>
+
+</div>
+
+<script type="text/javascript">
+    var elem = document.querySelector('.grid');
+    var msnry = new Masonry( elem, {
+        // options
+        itemSelector: '.grid-item',
+        columnWidth: 200
+    });
+    $(window).load(function(){
+        var elem = document.querySelector('.grid');
+        var msnry = new Masonry( elem, {
+            // options
+            itemSelector: '.grid-item',
+            columnWidth: 200
+        });
+    })
+</script>
